@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+
+{% block content %}
+	<h2 class="search-title">{{ content.title }}</h2>
+	
+<div class="main">
+  <ul class="cards">
+  	{% for post in final_postings %}
+    <li class="cards_item">
+      <div class="card">
+      	<a href="{{post.1}}">
+        <div class="card_image"><img src="{{post.3}}" width=400 height="400"></div>
+        </a>
+        <div class="card_content">
+          <h2 class="card_title">{{post.0}}</h2>
+          <p class="card_text">{{post.4}}</p>
+          <form action="{{post.1}}">
+          <button class="btn card_btn">{{post.2}}</button>
+          </form>
+        </div>
+      </div>
+    </li>
+      	{% endfor %}
+  </ul>
+</div>
+
+<h3 class="made_by">Made with ♡</h3>
+{% endblock %}
+
+
